@@ -1,0 +1,192 @@
+.header {
+  background-color: #2644f9;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+body {
+  font-family: ubuntu, signika, sans-serif, public sans-serif, Arial, Helvetica;
+  min-height:100%;
+}
+
+html {
+  height: 100%;
+  /* scroll-behavior: smooth; */
+}
+
+/* NAVBAR RESPONSIVE */
+
+
+
+
+
+
+
+
+
+
+
+/* 1 página */
+
+.editorial1 {
+  margin-bottom: 11px;
+}
+
+.texto-grande {
+  font-size: 1.0em; /* Cambia el tamaño del texto */
+  font-weight: bold; /* Hace que el texto esté en negrita */
+}
+
+
+.arriag1 {
+  height: 460px;
+  width: 300px;
+}
+
+.grid1 > * {
+  /* border-radius: 5px; */
+  /* border: solid black; */
+  text-align: justify; /* clave por pc factory */
+  hyphens: auto; /* clave por pc factory */
+  color: white;
+}
+
+.header1 {
+  grid-area: header;
+  background-color: #2644f9;
+  padding: 20px;
+}
+
+.navbar1 {
+  grid-area: navbar;
+  background-color: #2644f9;
+  padding: 30px;
+}
+
+.main1 {
+  grid-area: main;
+  background-color: #43D87E;
+  padding: 0px;
+}
+
+.sidebar1 {
+  grid-area: sidebar;
+  background-color: #2644f9;
+  padding: 30px;
+}
+
+.footer1 {
+  grid-area: footer;
+  background-color: beige;
+}
+
+.grid1 {
+  display: grid;
+  /* gap: 10px; */
+  grid-template-areas: 
+  "header"
+  "navbar"
+  "main"
+  "sidebar"
+  "footer";
+}
+
+@media (min-width: 899px) {
+  .grid1 {
+  grid-template: 
+  "header header" 100px /*(ALTO DE LA FILA)*/ /*si queremos que esté vacía solo habría que poner un punto*/
+  "navbar navbar" 50px /*(ALTO DE LA FILA)*/
+  "sidebar main" auto /*(ALTO DE LA FILA)*/
+  "footer footer" 100px / /*(ALTO DE LA FILA)*/
+  200px      auto; /*ancho de las columnas */
+  } 
+}
+
+
+    /*LA FORMA LARGA */
+   /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+  "header header"
+  "navbar navbar"
+  "sidebar main"
+  "footer footer";
+  } */
+
+
+  .grid1 {
+    display: grid;
+    /* gap: 10px; */
+    grid-template-areas: 
+    "header"
+    "navbar"
+    "main"
+    "sidebar"
+    "footer";
+  }
+  
+  
+  @media (min-width: 900px) {
+    .grid1 {
+    grid-template: 
+    "header header main" 100px /*(ALTO DE LA FILA)*/ /*si queremos que esté vacía solo habría que poner un punto*/
+    "navbar sidebar main" 650px /*(ALTO DE LA FILA)*/
+    "footer footer footer" 0px / /*(ALTO DE LA FILA)*/
+    500px   500px   300px; /*ancho de las columnas */
+    } 
+  }
+
+
+
+
+
+
+
+  /*  PAGE LOADER    */
+
+
+
+ /* Estilos para el loader-container, que centrará el loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Establecer el alto al 100% del viewport */
+}
+
+/* Estilos para el spinner/loader */
+.spinner {
+  border: 25px solid #43D87E;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-left-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para ocultar el contenido inicialmente */
+.content {
+  /* Estilos de tu contenido */
+  text-align: center;
+  margin-top: 50px;
+  opacity: 0; /* Establecer la opacidad inicial en 0 para ocultar el contenido */
+  transition: opacity 1s ease-in-out; /* Agregar una transición de opacidad */
+}
+
+/* Agregar una clase para mostrar el contenido */
+.content-show {
+  opacity: 1; /* Cuando se agrega esta clase, se muestra el contenido */
+}
+
